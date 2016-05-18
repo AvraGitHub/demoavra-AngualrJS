@@ -38,8 +38,8 @@
                     <table class="table table-striped">
                         <thead>
                         <tr class="font_blue">
-                            <th>Date From</th>
-                            <th>Date To</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
                             <th>Working Hours</th>
                             <th>Location</th>
                         </tr>
@@ -84,7 +84,7 @@
                             <td>{{informationSap_Activity_Log.SAP_OBJECT}}</td>
                             <td>{{informationSap_Activity_Log.SAP_OBJECT_NAME}}</td>
                             <td></td>
-                            <td>{{informationSap_Activity_Log.SAP_OBJECT_DESC}}</td>
+                            <td><a href="https://github.com/AvraGitHub/firsttest/commit/{{informationSap_Activity_Log.COMMIT_ID}}">{{informationSap_Activity_Log.SAP_OBJECT_DESC}}</a></td>
                         </tr>
                         <tr>
                             <td>{{msg}}</td>
@@ -108,6 +108,7 @@
                         <tr class="font_blue">
                             <th>Datefrom</th>
                             <th>Dateto</th>
+                            
                             <th>Confirmed Time</th>
                             <th>Detected Time</th>
                             <th>Time Difference</th>
@@ -146,14 +147,14 @@
                 <div class="panel-body ">
                   <div class="form-group">
                         <textarea class="form-control" rows="5" name="message" placeholder="Message" ng-model="message"></textarea>
-                        <br>
-                        <select ng-model="select">
+			<br>
+			<select ng-model="select">
+			  <option value=""></option>
                           <option value="Time">Time</option>
                           <option value="Remote Work">Remote Work</option>
                         </select>
-                          <select ng-model="select" ng-options="data for data in selectTime">
-                        </select>
-                        </select>
+                      <!--<select ng-model="select" ng-options="data for data in selectTime">
+                        </select>-->
                         <br>
                         <input type="button" class="btn btn-primary pull-right"  value="Send" ng-click="gcmFunction()"/>
                   </div>
